@@ -21,7 +21,7 @@
 
 # Description
 
-Passknight is a cross-platform, self hosted password manager that uses [Firestore](https://firebase.google.com/docs/firestore) as it's backend. It provides a secure environment for storing and managing credentials and secure notes with it's security implementation and firestore rules.
+Passknight is a cross-platform, user-configured cloud hosted password manager that uses [Firestore](https://firebase.google.com/docs/firestore) as it's backend. It provides a secure environment for storing and managing credentials and secure notes with it's security implementation and firestore rules.
 
 It supports multiple users / vaults, making it easy to organize your passwords and notes.
 
@@ -97,7 +97,7 @@ To encrypt and decrypt your passwords, Passknigth uses the **AES-CBC** algorithm
 **This is optional for the windows app as it also has locally stored vaults.**
 
 - Login to [firebase](https://firebase.com) and create a new project.
-- Register a **web app**. 
+- Register a **web app** and an **android app**(package name is com.example.passknight). 
 - Go to **authentification** and add the <u>Email/Password</u> provider.
 - Enable **Firestore Database** and add the following rules in the ```rules``` tab:
 ```
