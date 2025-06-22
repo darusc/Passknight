@@ -17,7 +17,7 @@ export function savePersistence(data: any) {
 export async function loadPersistence(key: string) {
   const res = await chrome.storage.session.get(["firebase"]);
   
-  if(res["firebase"]) {
+  if(res && res["firebase"]) {
     window.sessionStorage.setItem(key, res["firebase"]);
   }
 }
@@ -35,7 +35,10 @@ export function saveKeyToStorage(key: string) {
 
 export async function loadKeyFromStorage() {
   const res = await chrome.storage.session.get(["key"]);
-  return res["key"] || "";
+  if(!res || !res["key"]) {
+    return "";
+  }
+  return res["key"];
 }
 
 export async function autofillSetItems(items: PasswordItem[]) {
